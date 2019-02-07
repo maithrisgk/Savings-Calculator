@@ -1,5 +1,6 @@
 # Savings-Calculator
 AWS EC2 Ubuntu Instance, HTML5, Bootstrap, JavaScript (jQuery), Flask, wsgi, Apache, HTTPS
+
 Author: Maithri Santhana Gopala Krishnan
 
 Description:

@@ -17,6 +17,7 @@ Web Browser
 How to use the application:
 1.	The user should direct to the following web address in their corresponding web browser.
 https://ec2-52-14-104-23.us-east-2.compute.amazonaws.com/
+(The EC2 instance should be running for the link to work)
 
 2.	The user should fill in the fields (that apply) of the form by entering the amount in US dollars and click the “Calculate My Monthly Saving” button.  
 

@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title> Savings Calculator </title>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- <style src="/static/1.css"></style> -->
+
+<!-- <script src="./calculate.js"></script> -->
+<script>
+$(document).ready(function(){
+    $("#calculate").click(function(){
+        var salary = $("#salary").val();
+        var otherincome = $("#otherincome").val();
+        var prime = $("#prime").val();
+        var netflix = $("#netflix").val();
+        var cable = $("#cable").val();
+        var others = $("#others").val();
+        var rent = $("#rent").val();
+        var groceries = $("#groceries").val();
+        var gas = $("#gas").val();
+        var electricity = $("#electricity").val();
+        var wifi = $("#wifi").val();
+        var phone = $("#phone").val();
+
+      
+
+
+$.getJSON( '/_calculate', {
+            salary:salary,
+            otherincome:otherincome,
+            prime:prime,
+            netflix:netflix,
+            cable:cable,
+            others:others,
+            rent:rent,
+            groceries:groceries,
+            gas:gas,
+            electricity:electricity,
+            wifi:wifi,
+            phone:phone
+           
+        }, function(data) {
+        
+            $("#result").html(data.result);
+       
+        });
+
+    });
+});
+
+</script>
+    </head>
+    <body { background: #000000 !important;}>
+        <div class='row' style="text-align: center">
+            <div class="col-md-12">
+              <strong>  <h1 class="bg-info"> Savings Calculator </h1> </strong>
+              <h3 class="text-primary"> Start planning your month !!! </h3>
+            </div>
+        </div> <br/>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-3">
+                    <div class="form-group">
+                            
+                            <h3 class="bg-danger"> Income </h3>
+                            <label class="bg-success control-label" > Salary ($) </label>
+                            <input type="number" id="salary" class="form-control" value="0.00"> <br/>
+                            <label class="bg-success control-label" > Any other Income ($)</label>
+                            <input type="number" id="otherincome" class="form-control" value="0.00"> 
+                            <h3 class="bg-danger"> Entertainment </h3>
+                                                <label class="bg-success control-label" > Amazon Prime ($)</label>
+                                                <input type="number" id="prime" class="form-control" value="0.00"> <br/>
+                                                <label class="bg-success control-label" > Netflix ($) </label>
+                                                <input type="number" id="netflix" class="form-control" value="0.00"> <br/>
+                                                <label class="bg-success control-label" > Cable TV ($)</label>
+                                                <input type="number" id="cable" class="form-control" value="0.00"> <br/>
+                                                <label class="bg-success control-label" > Others ($)  </label>
+                                                <input type="number" id="others" class="form-control" value="0.00">
+                                                
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-3">
+                            
+                            <div class="form-group">
+                                    
+                                    <h3 class="bg-danger"> Expenditure </h3>
+                                    <label class="bg-success control-label" > Rent ($) </label>
+                                    <input type="number" id="rent" class="form-control" value="0.00"> <br/>
+                                    <label class="bg-success control-label" > Groceries ($) </label>
+                                    <input type="number" id="groceries" class="form-control" value="0.00"> <br/>
+                                    <label class="bg-success control-label" > Gas ($) </label>
+                                    <input type="number" id="gas" class="form-control" value="0.00"> <br/>
+                                    <label class="bg-success control-label" > Electricity ($) </label>
+                                    <input type="number" id="electricity" class="form-control" value="0.00"> <br/>
+                                    <label class="bg-success control-label" > Wifi ($) </label>
+                                    <input type="number" id="wifi" class="form-control" value="0.00"> <br/>
+                                    <label class="bg-success control-label" > Phone ($) </label>
+                                    <input type="number" id="phone" class="form-control" value="0.00"> <br/>
+                                   
+                            </div>
+                        </div>      
+                       
+<br/><br/>
+                                    <div class="row">
+                                            <div class="col-md-3">
+                                                    <div class="form-group">
+                                                            <button class="btn btn-primary btn-block btn-lg" type="button" id="calculate">Calculate My Monthly Saving 
+                                                              &nbsp;  <span class="glyphicon glyphicon-ok-circle"></span>
+                                                            </button>
+                                                            
+                                                        
+                                                      
+                                               
+                                                
+                                                
+
+                                                <br/>
+                                                                <h3 class="bg-warning"> <strong> Your Savings this Month ($) </strong> </h3> <br/> <br/>
+                                                                
+                                                                <p id="result" class="lead bg-success" style="text-align: center">  
+                                                                        <span class="input-group-text">$</span>
+
+                                                                </p>
+                                                                
+                                                        </div>
+                                                    </div> </div></div>  </div>
+    </body>
+</html>
